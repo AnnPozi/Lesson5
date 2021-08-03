@@ -56,8 +56,13 @@ public class contactUs {
         webDriver.findElement(By.id("submitMessage")).click();
         logger.info("Clicking send button");
 
-    webDriver.findElement(By.xpath("//*[@id=\"center_column\"]/p")).isDisplayed();
+   webDriver.findElement(By.xpath("//*[@id=\"center_column\"]/p")).isDisplayed();
     logger.info("Successful sent");
+
+    String messageText = webDriver.findElement(By.xpath("//*[@id=\"center_column\"]/p")).getText();
+    System.out.println(messageText.equals("Your message has been successfully sent to our team."));
+    messageText.equals("Your message has been successfully sent to our team.");
+    logger.info("The info message is correct");
 
     webDriver.quit();
 
